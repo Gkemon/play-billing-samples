@@ -15,8 +15,8 @@
    limitations under the License.
 -->
 <resources>
-    <string name="app_name">Trivial Drive</string>
-    <string name="title_game_fragment">Trivial Drive</string>
+    <string name="app_name">Kaaz Drive</string>
+    <string name="title_game_fragment">Kaaz Drive</string>
     <string name="title_make_purchase_fragment">Buy Stuff!</string>
 
     <string name="menu_consume_premium">Consume Premium (For Testing)</string>

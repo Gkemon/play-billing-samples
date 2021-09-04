@@ -17,7 +17,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.sample.android.trivialdrivesample.ui.MainActivity">
+    tools:context="com.sample.kaaz.inAppPurchase.ui.MainActivity">
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main_layout"
         android:layout_width="match_parent"

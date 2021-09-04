@@ -17,17 +17,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.sample.android.trivialdrivesample.ui.GameFragment">
+    tools:context="com.sample.kaaz.inAppPurchase.ui.GameFragment">
     <data>
         <variable
             name="gvm"
-            type="com.sample.android.trivialdrivesample.GameViewModel"/>
+            type="com.sample.kaaz.inAppPurchase.GameViewModel"/>
         <variable
             name="gasTankImages"
             type="android.content.res.TypedArray"/>
         <variable
             name="gameFragment"
-            type="com.sample.android.trivialdrivesample.ui.GameFragment"/>
+            type="com.sample.kaaz.inAppPurchase.ui.GameFragment"/>
     </data>
 
     <ScrollView

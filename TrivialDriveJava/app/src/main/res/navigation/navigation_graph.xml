@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.sample.android.trivialdrivesample.ui.GameFragment"
+        android:name="com.sample.kaaz.inAppPurchase.ui.GameFragment"
         android:label="@string/title_game_fragment"
         tools:layout="@layout/fragment_game">
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/makePurchaseFragment"
-        android:name="com.sample.android.trivialdrivesample.ui.MakePurchaseFragment"
+        android:name="com.sample.kaaz.inAppPurchase.ui.MakePurchaseFragment"
         android:label="@string/title_make_purchase_fragment"
         tools:layout="@layout/fragment_make_purchase"/>
 </navigation>

@@ -9,19 +9,19 @@ try {
 
 android {
     signingConfigs {
-        /* TODO(developer): Configure to sign app with a release key for testing.
+         /*TODO(developer): Configure to sign app with a release key for testing.*/
         release {
-            storeFile file('path/to/release/signing/key')
-            keyAlias 'release_key_alias'
-            keyPassword "${password}"
-            storePassword "${password}"
-        }*/
+            keyAlias "trivialdrive"
+            keyPassword "trivialdrive"
+            storeFile file("../keystore/trivialdrive.jks")
+            storePassword "trivialdrive"
+        }
     }
     compileSdkVersion 30
     buildToolsVersion '30.0.3'
 
     defaultConfig {
-        applicationId 'com.sample.android.trivialdrivesample'
+        applicationId 'com.sample.kaaz.inAppPurchase'
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 8
