@@ -45,6 +45,7 @@ import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
 import com.android.billingclient.api.SkuDetailsResponseListener;
 
+import com.sample.kaaz.inAppPurchase.MakePurchaseViewModel;
 import com.sample.kaaz.inAppPurchase.ui.SingleMediatorLiveEvent;
 
 import java.util.ArrayList;
@@ -228,7 +229,7 @@ public class BillingDataSource implements LifecycleObserver, PurchasesUpdatedLis
                         Log.v(TAG, "Skus not fresh, requerying");
                         querySkuDetailsAsync();
                     }
-
+                    querySkuDetailsAsync();
                 }
             };
             skuStateMap.put(sku, skuState);
@@ -734,7 +735,6 @@ public class BillingDataSource implements LifecycleObserver, PurchasesUpdatedLis
                             billingFlowParamsBuilder.setSkuDetails(skuDetails);
                             switch (heldSubscriptions.size()) {
                                 case 1:  // Upgrade flow!
-                                    Purchase purchase = heldSubscriptions.get(0);
                                     billingFlowParamsBuilder.setSubscriptionUpdateParams(
                                             BillingFlowParams.SubscriptionUpdateParams.newBuilder()
                                                     .setOldSkuPurchaseToken(heldSubscriptions.get(0)
@@ -750,6 +750,7 @@ public class BillingDataSource implements LifecycleObserver, PurchasesUpdatedLis
                                     }
                                     break;
                                 case 0:
+                                    buy(activity,skuDetails);
                                     break;
                                 default:
                                     Log.e(TAG, heldSubscriptions.size() +
@@ -757,18 +758,22 @@ public class BillingDataSource implements LifecycleObserver, PurchasesUpdatedLis
                             }
                         });
             } else {
-                BillingFlowParams.Builder billingFlowParamsBuilder = BillingFlowParams.newBuilder();
-                billingFlowParamsBuilder.setSkuDetails(skuDetails);
-                BillingResult br = billingClient.launchBillingFlow(activity,
-                        billingFlowParamsBuilder.build());
-                if (br.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                    billingFlowInProcess.postValue(true);
-                } else {
-                    Log.e(TAG, "Billing failed: + " + br.getDebugMessage());
-                }
+               buy(activity,skuDetails);
             }
         } else {
             Log.e(TAG, "SkuDetails not found for: " + sku);
+        }
+    }
+
+    private  void buy(Activity activity,SkuDetails skuDetails){
+        BillingFlowParams.Builder billingFlowParamsBuilder = BillingFlowParams.newBuilder();
+        billingFlowParamsBuilder.setSkuDetails(skuDetails);
+        BillingResult br = billingClient.launchBillingFlow(activity,
+                billingFlowParamsBuilder.build());
+        if (br.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+            billingFlowInProcess.postValue(true);
+        } else {
+            Log.e(TAG, "Billing failed: + " + br.getDebugMessage());
         }
     }
 

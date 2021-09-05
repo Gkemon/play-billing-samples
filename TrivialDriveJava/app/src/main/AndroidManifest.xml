@@ -14,9 +14,12 @@
    limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sample.kaaz.inAppPurchase">
-
+    <uses-permission android:name="com.android.vending.BILLING" />
     <application
+        android:debuggable="true"
+        tools:ignore="HardcodedDebugMode"
         android:name="com.sample.kaaz.inAppPurchase.InAppPurchaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

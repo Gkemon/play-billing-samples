@@ -136,6 +136,7 @@ public class MakePurchaseFragment extends Fragment {
         if (null == skuTitle || null == isPurchased) {
             return;
         }
+        skuTitle = skuTitle.replace("(com.sample.kaaz.inAppPurchase (unreviewed))","");
         if ( isPurchased && ( sku.equals(TrivialDriveRepository.SKU_INFINITE_GAS_MONTHLY) ||
                 sku.equals(TrivialDriveRepository.SKU_INFINITE_GAS_YEARLY))) {
             // add URL to the Play store to allow user to unsubscribe if the user already has

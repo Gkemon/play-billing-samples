@@ -24,8 +24,8 @@ android {
         applicationId 'com.sample.kaaz.inAppPurchase'
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 8
-        versionName "1.5"
+        versionCode 1
+        versionName "1.1"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments += ["room.schemaLocation":
@@ -41,10 +41,10 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             // TODO(developer): uncomment below once config above is complete and uncommented.
-            // signingConfig signingConfigs.release
+             signingConfig signingConfigs.release
         }
     }
     buildFeatures {
