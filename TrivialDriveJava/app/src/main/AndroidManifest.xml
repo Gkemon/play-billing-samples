@@ -17,6 +17,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sample.kaaz.inAppPurchase">
     <uses-permission android:name="com.android.vending.BILLING" />
+        <!--TODO: Google play store not let you to upload debug apk. So it you put debuggable=true flag here
+        then you can't upload apk in play store-->
     <application
         android:name="com.sample.kaaz.inAppPurchase.InAppPurchaseApplication"
         android:allowBackup="true"
