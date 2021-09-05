@@ -18,8 +18,6 @@
     package="com.sample.kaaz.inAppPurchase">
     <uses-permission android:name="com.android.vending.BILLING" />
     <application
-        android:debuggable="true"
-        tools:ignore="HardcodedDebugMode"
         android:name="com.sample.kaaz.inAppPurchase.InAppPurchaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
