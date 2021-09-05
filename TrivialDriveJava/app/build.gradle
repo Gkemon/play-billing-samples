@@ -41,6 +41,7 @@ android {
     }
     buildTypes {
         release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             // TODO(developer): uncomment below once config above is complete and uncommented.
              signingConfig signingConfigs.release
